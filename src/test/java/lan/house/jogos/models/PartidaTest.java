@@ -19,7 +19,7 @@ public class PartidaTest {
         jogadores.add(jogador2);
         Partida partida = new Partida(jogo, jogadores, new Date(), new Date());
         
-        partida.iniciarPartida(new Date()); // Iniciar a partida
+        partida.iniciarPartida(new Date()); 
         
         assertEquals(Partida.Status.EM_ANDAMENTO, partida.getStatus());
     }
@@ -34,8 +34,8 @@ public class PartidaTest {
         jogadores.add(jogador2);
         Partida partida = new Partida(jogo, jogadores, new Date(), new Date());
         
-        partida.iniciarPartida(new Date()); // Iniciar a partida
-        partida.finalizarPartida(new Date(), jogador1); // Finalizar a partida
+        partida.iniciarPartida(new Date()); 
+        partida.finalizarPartida(new Date(), jogador1); 
         
         assertEquals(Partida.Status.FINALIZADA, partida.getStatus());
         assertEquals(jogador1, partida.getVencedor());
