@@ -4,10 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 public class Partida {
-    public enum Status {
-        PROGRAMADA, EM_ANDAMENTO, FINALIZADA
-    }
-
+  
     private Jogo jogo;
     private List<Jogador> jogadores;
     private Status status;

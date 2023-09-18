@@ -21,7 +21,7 @@ public class PartidaTest {
         
         partida.iniciarPartida(new Date()); 
         
-        assertEquals(Partida.Status.EM_ANDAMENTO, partida.getStatus());
+        assertEquals(Status.EM_ANDAMENTO, partida.getStatus());
     }
 
     @Test
@@ -37,7 +37,7 @@ public class PartidaTest {
         partida.iniciarPartida(new Date()); 
         partida.finalizarPartida(new Date(), jogador1); 
         
-        assertEquals(Partida.Status.FINALIZADA, partida.getStatus());
+        assertEquals(Status.FINALIZADA, partida.getStatus());
         assertEquals(jogador1, partida.getVencedor());
     }
 }
