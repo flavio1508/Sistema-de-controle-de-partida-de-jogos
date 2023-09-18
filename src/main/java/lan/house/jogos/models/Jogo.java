@@ -1,6 +1,17 @@
 package lan.house.jogos.models;
 
-public class Jogo {
+import javax.persistence.Entity;
+
+import lan.house.jogos.utils.EntidadeBase;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Entity
+@NoArgsConstructor
+@Builder
+public class Jogo extends EntidadeBase {
     private String nome;
     private String categoria;
     private String fornecedor;

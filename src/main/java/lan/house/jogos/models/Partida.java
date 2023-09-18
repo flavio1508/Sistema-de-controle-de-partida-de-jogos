@@ -3,7 +3,20 @@ package lan.house.jogos.models;
 import java.util.Date;
 import java.util.List;
 
-public class Partida {
+import javax.persistence.Entity;
+
+import lan.house.jogos.utils.EntidadeBase;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Partida extends EntidadeBase {
   
     private Jogo jogo;
     private List<Jogador> jogadores;

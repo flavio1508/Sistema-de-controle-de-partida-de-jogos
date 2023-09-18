@@ -1,7 +1,18 @@
 package lan.house.jogos.models;
 import java.util.Date;
 
-public class Jogador {
+import javax.persistence.Entity;
+
+import lan.house.jogos.utils.EntidadeBase;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Entity
+@NoArgsConstructor
+@Builder
+public class Jogador extends EntidadeBase {
     private String nome;
     private Date dataNascimento;
     private String nickname;
@@ -14,19 +25,5 @@ public class Jogador {
         this.email = email;
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public Date getDataNascimento() {
-        return dataNascimento;
-    }
-
-    public String getNickname() {
-        return nickname;
-    }
-
-    public String getEmail() {
-        return email;
-    }
+   
 }
