@@ -10,6 +10,7 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import org.hibernate.annotations.ManyToAny;
 
@@ -25,25 +26,37 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class Partida extends EntidadeBase {
+
+    @Column(nullable = false)
     private LocalDate inicioProgramado;
+
+    @Column(nullable = false)
     private LocalDate fimProgramado;
+
+    @Column(nullable = false)
     private Jogador vencedor;
+
+    @Column(nullable = false)
     private LocalDate inicioReal;
+    
+    @Column(nullable = false)
     private LocalDate fimReal;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Status status;
 
+    @OneToOne(mappedBy = "partida")
     private Jogo jogo;
 
     @ManyToMany(mappedBy = "partida", cascade = CascadeType.REMOVE)
     private List<Jogador> jogadores;
 
-    public Partida(Jogo jogo, List<Jogador> jogadores, LocalDate inicioProgramado, LocalDate fimProgramado) {
+    public Partida(Status status, Jogo jogo, List<Jogador> jogadores, LocalDate inicioProgramado,
+            LocalDate fimProgramado) {
         this.jogo = jogo;
         this.jogadores = jogadores;
-        this.status = Status.PROGRAMADA;
+        this.status = status;
         this.inicioProgramado = inicioProgramado;
         this.fimProgramado = fimProgramado;
     }
@@ -63,5 +76,4 @@ public class Partida extends EntidadeBase {
         }
     }
 
-    
 }
