@@ -63,11 +63,5 @@ public class Partida extends EntidadeBase {
         }
     }
 
-    public Status getStatus() {
-        return status;
-    }
-
-    public Jogador getVencedor() {
-        return vencedor;
-    }
+    
 }
