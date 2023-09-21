@@ -1,9 +1,10 @@
 package lan.house.jogos.models;
-import java.util.Date;
+import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 
-import lan.house.jogos.utils.EntidadeBase;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,19 +12,15 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
-public class Jogador extends EntidadeBase {
-    private String nome;
-    private Date dataNascimento;
+public class Jogador extends Pessoa {
+    @Column(nullable = true, length = 50)
     private String nickname;
-    private String email;
 
-    public Jogador(String nome, Date dataNascimento, String nickname, String email) {
-        this.nome = nome;
-        this.dataNascimento = dataNascimento;
+    public Jogador(String nome, LocalDate dataNascimento, Genero genero, String nickname)throws Exception {
+        super(nome, dataNascimento, genero);
         this.nickname = nickname;
-        this.email = email;
     }
 
-   
 }

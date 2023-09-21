@@ -1,6 +1,6 @@
 package lan.house.jogos.models;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -21,13 +21,13 @@ public class Partida extends EntidadeBase {
     private Jogo jogo;
     private List<Jogador> jogadores;
     private Status status;
-    private Date inicioProgramado;
-    private Date fimProgramado;
+    private LocalDate inicioProgramado;
+    private LocalDate fimProgramado;
     private Jogador vencedor;
-    private Date inicioReal;
-    private Date fimReal;
+    private LocalDate inicioReal;
+    private LocalDate fimReal;
 
-    public Partida(Jogo jogo, List<Jogador> jogadores, Date inicioProgramado, Date fimProgramado) {
+    public Partida(Jogo jogo, List<Jogador> jogadores, LocalDate inicioProgramado, LocalDate fimProgramado) {
         this.jogo = jogo;
         this.jogadores = jogadores;
         this.status = Status.PROGRAMADA;
@@ -35,14 +35,14 @@ public class Partida extends EntidadeBase {
         this.fimProgramado = fimProgramado;
     }
 
-    public void iniciarPartida(Date inicioReal) {
+    public void iniciarPartida(LocalDate inicioReal) {
         if (status == Status.PROGRAMADA) {
             this.status = Status.EM_ANDAMENTO;
             this.inicioReal = inicioReal;
         }
     }
 
-    public void finalizarPartida(Date fimReal, Jogador vencedor) {
+    public void finalizarPartida(LocalDate fimReal, Jogador vencedor) {
         if (status == Status.EM_ANDAMENTO) {
             this.status = Status.FINALIZADA;
             this.fimReal = fimReal;
