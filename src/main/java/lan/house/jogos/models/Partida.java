@@ -9,10 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-
-import org.hibernate.annotations.ManyToAny;
 
 import lan.house.jogos.utils.EntidadeBase;
 import lombok.AllArgsConstructor;

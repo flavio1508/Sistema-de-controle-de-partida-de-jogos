@@ -1,7 +1,5 @@
 package lan.house.jogos.models.user;
 
-import lan.house.jogos.models.Administrador;
-
 public enum UserRole {
     Administrador ("administrador"),
     Jogador ("jogador");
