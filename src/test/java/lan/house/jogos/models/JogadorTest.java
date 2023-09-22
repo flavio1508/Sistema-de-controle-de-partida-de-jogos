@@ -1,18 +1,22 @@
-// package lan.house.jogos.models;
+package lan.house.jogos.models;
 
-// import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
-// import java.util.Date;
+import java.time.LocalDate;
 
-// import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-// public class JogadorTest {
-//     @Test
-//     public void testCriarJogador() {
-//         Jogador jogador = new Jogador("João", new Date(), "joao123", "joao@example.com");
-        
-//         assertEquals("João", jogador.getNome());
-//         assertEquals("joao123", jogador.getNickname());
-//         assertEquals("joao@example.com", jogador.getEmail());
-//     }
-// }
+public class JogadorTest {
+    @Test
+    public void Criar_Jogador() {
+        try {
+            Jogador jogador = new Jogador("flavio", LocalDate.of(2002, 8, 15), Genero.MASCULINO, "flavio123",new Usuario());
+
+            assertEquals("flavio", jogador.getNome());
+            assertEquals("flavio123", jogador.getNickname());
+            assertEquals(Genero.MASCULINO, jogador.getGenero());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}

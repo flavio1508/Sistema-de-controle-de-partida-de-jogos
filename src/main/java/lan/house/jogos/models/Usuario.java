@@ -1,4 +1,4 @@
-package lan.house.jogos.models.user;
+package lan.house.jogos.models;
 
 
 import javax.persistence.Column;
@@ -17,9 +17,6 @@ import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
-import lan.house.jogos.models.Administrador;
-import lan.house.jogos.models.Jogador;
 
 import java.util.Collection;
 import java.util.List;

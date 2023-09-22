@@ -1,4 +1,4 @@
-package lan.house.jogos.models.user;
+package lan.house.jogos.models;
 
 public enum UserRole {
     Administrador ("administrador"),
