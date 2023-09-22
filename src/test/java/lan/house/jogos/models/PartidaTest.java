@@ -10,7 +10,7 @@
 
 // public class PartidaTest {
 //     @Test
-//     public void testIniciarPartida() {
+//     public void Iniciar_Partida() {
 //         Jogo jogo = new Jogo("FIFA 22", "Esportes", "EA Sports");
 //         Jogador jogador1 = new Jogador("João", new Date(), "joao123", "joao@example.com");
 //         Jogador jogador2 = new Jogador("Maria", new Date(), "maria456", "maria@example.com");
@@ -25,7 +25,7 @@
 //     }
 
 //     @Test
-//     public void testFinalizarPartida() {
+//     public void Finalizar_Partida() {
 //         Jogo jogo = new Jogo("FIFA 22", "Esportes", "EA Sports");
 //         Jogador jogador1 = new Jogador("João", new Date(), "joao123", "joao@example.com");
 //         Jogador jogador2 = new Jogador("Maria", new Date(), "maria456", "maria@example.com");
