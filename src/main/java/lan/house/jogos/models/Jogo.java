@@ -1,5 +1,6 @@
 package lan.house.jogos.models;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -24,21 +25,12 @@ public class Jogo extends EntidadeBase {
     @Column(length = 500, nullable = true)
     private String descricao;
 
-    @Column(nullable = false, length = 200)
-    private String categoria;
-
-    @Column(nullable = false, length = 200)
-    private String fornecedor;
-
-    @OneToMany
-    private List <Partida> partidas;
-
-    public Jogo(String nome, String descricao, String categoria, String fornecedor){
+    @Column(nullable = false)
+    private LocalDate dataDeCriacao;
+    
+    public Jogo(String nome, String descricao) {
         this.nome = nome;
         this.descricao = descricao;
-        this.categoria = categoria;
-        this.fornecedor = fornecedor;
     }
 
- 
 }

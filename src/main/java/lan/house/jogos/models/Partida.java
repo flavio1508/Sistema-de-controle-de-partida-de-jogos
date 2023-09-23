@@ -43,16 +43,16 @@ public class Partida extends EntidadeBase {
     @Column(nullable = false)
     private Status status;
 
-    @OneToOne(mappedBy = "partida")
-    private Jogo jogo;
+    // @OneToOne(mappedBy = "partida")
+    // private Jogo jogo;
 
-    @ManyToMany(mappedBy = "partida", cascade = CascadeType.REMOVE)
-    private List<Jogador> jogadores;
+    // @ManyToMany(mappedBy = "partida", cascade = CascadeType.REMOVE)
+    // private List<Jogador> jogadores;
 
-    public Partida(Status status, Jogo jogo, List<Jogador> jogadores, LocalDate inicioProgramado,
+    public Partida(Status status, LocalDate inicioProgramado,
             LocalDate fimProgramado) {
-        this.jogo = jogo;
-        this.jogadores = jogadores;
+        // this.jogo = jogo;
+        // this.jogadores = jogadores;
         this.status = status;
         this.inicioProgramado = inicioProgramado;
         this.fimProgramado = fimProgramado;
