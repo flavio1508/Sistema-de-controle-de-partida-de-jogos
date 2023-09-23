@@ -5,6 +5,10 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import lan.house.jogos.utils.EntidadeBase;
@@ -27,7 +31,15 @@ public class Jogo extends EntidadeBase {
 
     @Column(nullable = false)
     private LocalDate dataDeCriacao;
-    
+
+    @ManyToOne
+    private Categoria categoria;
+
+    @ManyToMany
+    @JoinTable(name = "jogo_fornecedor", joinColumns = @JoinColumn(name = "jogo_id"), 
+    inverseJoinColumns = @JoinColumn(name = "fornecedor_id"))
+    private List<Fornecedor> fornecedores;
+
     public Jogo(String nome, String descricao) {
         this.nome = nome;
         this.descricao = descricao;

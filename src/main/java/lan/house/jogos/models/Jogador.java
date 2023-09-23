@@ -9,14 +9,12 @@ import javax.persistence.Enumerated;
 import javax.validation.constraints.Email;
 
 import lan.house.jogos.utils.EntidadeBase;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @Entity
 @NoArgsConstructor
-@Builder
 public class Jogador extends EntidadeBase {
     @Column(nullable = false, length = 100)
     private String nome;
@@ -28,14 +26,15 @@ public class Jogador extends EntidadeBase {
     @Column(nullable = false)
     private Genero genero;
 
-    @Column(nullable = true, length = 50)
+    @Column(nullable = true, length = 50, unique = true)
     private String nickname;
 
     @Email
     @Column(nullable = false, unique = true)
     private String email;
 
-    public Jogador(String nome, LocalDate dataDeNascimento, Genero genero, String nickname, String email) {
+    public Jogador(String nome, LocalDate dataDeNascimento, Genero genero, String nickname, String email) throws Exception {
+        validaDataDeNAscimento(dataDeNascimento);
         this.nome = nome;
         this.dataDeNascimento = dataDeNascimento;
         this.genero = genero;
@@ -48,5 +47,9 @@ public class Jogador extends EntidadeBase {
             throw new Exception("A data de nascimento não pode ser vazia");
         }
     }
-
+    public boolean isMaiorDe14Anos() {
+        LocalDate hoje = LocalDate.now();
+        LocalDate dataNascimento = this.dataDeNascimento;
+        return dataNascimento.plusYears(14).isBefore(hoje);
+    }
 }

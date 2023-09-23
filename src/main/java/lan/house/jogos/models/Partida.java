@@ -1,7 +1,6 @@
 package lan.house.jogos.models;
 
 import java.time.LocalDate;
-import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -9,7 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
 
 import lan.house.jogos.utils.EntidadeBase;
 import lombok.AllArgsConstructor;
@@ -30,8 +28,8 @@ public class Partida extends EntidadeBase {
     @Column(nullable = false)
     private LocalDate fimProgramado;
 
-    @Column(nullable = false)
-    private Jogador vencedor;
+    // @ManyToOne // Mapeia vencedor como um relacionamento muitos-para-um
+    // private Jogador vencedor;
 
     @Column(nullable = false)
     private LocalDate inicioReal;
@@ -43,16 +41,14 @@ public class Partida extends EntidadeBase {
     @Column(nullable = false)
     private Status status;
 
-    // @OneToOne(mappedBy = "partida")
-    // private Jogo jogo;
+  
 
-    // @ManyToMany(mappedBy = "partida", cascade = CascadeType.REMOVE)
-    // private List<Jogador> jogadores;
+    @ManyToMany(mappedBy = "partida", cascade = CascadeType.REMOVE)
+    private Jogador jogadores;
 
     public Partida(Status status, LocalDate inicioProgramado,
             LocalDate fimProgramado) {
-        // this.jogo = jogo;
-        // this.jogadores = jogadores;
+       
         this.status = status;
         this.inicioProgramado = inicioProgramado;
         this.fimProgramado = fimProgramado;
@@ -65,11 +61,11 @@ public class Partida extends EntidadeBase {
         }
     }
 
-    public void finalizarPartida(LocalDate fimReal, Jogador vencedor) {
+    public void finalizarPartida(LocalDate fimReal, Jogador jogadores) {
         if (status == Status.EM_ANDAMENTO) {
             this.status = Status.FINALIZADA;
             this.fimReal = fimReal;
-            this.vencedor = vencedor;
+            this.jogadores = jogadores;
         }
     }
 

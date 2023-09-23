@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import lan.house.jogos.models.Jogo;
 
-public interface JogoRespository extends JpaRepository<Jogo, Long> {
+public interface JogoRepository extends JpaRepository<Jogo, Long> {
     List<Jogo>findByNomeContainingIgnoreCase(String nome);
 
 }
