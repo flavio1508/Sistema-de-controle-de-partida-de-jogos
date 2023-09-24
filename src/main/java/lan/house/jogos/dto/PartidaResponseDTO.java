@@ -2,8 +2,8 @@ package lan.house.jogos.dto;
 
 import java.time.LocalDate;
 
-import ch.qos.logback.core.status.Status;
 import lan.house.jogos.models.Partida;
+import lan.house.jogos.models.Status;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
