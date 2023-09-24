@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.Email;
 
 import lan.house.jogos.utils.EntidadeBase;
@@ -33,19 +34,15 @@ public class Jogador extends EntidadeBase {
     @Column(nullable = false, unique = true)
     private String email;
 
-    public Jogador(String nome, LocalDate dataDeNascimento, Genero genero, String nickname, String email) throws Exception {
-        validaDataDeNAscimento(dataDeNascimento);
+    @ManyToOne
+    private Jogo jogo;
+
+    public Jogador(String nome, LocalDate dataDeNascimento, Genero genero, String nickname, String email)  {
         this.nome = nome;
         this.dataDeNascimento = dataDeNascimento;
         this.genero = genero;
         this.nickname = nickname;
         this.email = email;
-    }
-
-    private void validaDataDeNAscimento(LocalDate dataDeNascimetno) throws Exception {
-        if (dataDeNascimetno == null) {
-            throw new Exception("A data de nascimento não pode ser vazia");
-        }
     }
     public boolean isMaiorDe14Anos() {
         LocalDate hoje = LocalDate.now();

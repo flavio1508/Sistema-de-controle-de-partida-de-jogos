@@ -2,12 +2,15 @@ package lan.house.jogos.dto;
 
 import java.time.LocalDate;
 
+import lan.house.jogos.models.Categoria;
+import lan.house.jogos.models.Fornecedor;
 import lan.house.jogos.models.Genero;
 import lan.house.jogos.models.Jogador;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,8 +22,10 @@ public class JogadorResponseDTO {
     private Genero genero;
     private String nickname;
     private String email;
+    private Categoria categoria;
+    private Fornecedor fornecedor;
 
-    public JogadorResponseDTO(Jogador jogador){
+    public JogadorResponseDTO(Jogador jogador) {
         this.id = jogador.getId();
         this.nome = jogador.getNome();
         this.dataDeNascimento = jogador.getDataDeNascimento();

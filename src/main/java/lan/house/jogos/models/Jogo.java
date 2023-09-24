@@ -34,15 +34,15 @@ public class Jogo extends EntidadeBase {
 
     @ManyToOne
     private Categoria categoria;
+    @ManyToOne
+    private Fornecedor fornecedor;
 
-    @ManyToMany
-    @JoinTable(name = "jogo_fornecedor", joinColumns = @JoinColumn(name = "jogo_id"), 
-    inverseJoinColumns = @JoinColumn(name = "fornecedor_id"))
-    private List<Fornecedor> fornecedores;
 
-    public Jogo(String nome, String descricao) {
+    public Jogo(String nome, String descricao, Categoria categoria, Fornecedor fornecedor) {
         this.nome = nome;
         this.descricao = descricao;
+        this.categoria = categoria;
+        this.fornecedor = fornecedor;
     }
 
 }
