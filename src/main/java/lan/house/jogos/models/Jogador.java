@@ -44,9 +44,9 @@ public class Jogador extends EntidadeBase {
         this.nickname = nickname;
         this.email = email;
     }
-    // public boolean isMaiorDe14Anos() {
-    //     LocalDate hoje = LocalDate.now();
-    //     LocalDate dataNascimento = this.dataDeNascimento;
-    //     return dataNascimento.plusYears(14).isBefore(hoje);
-    // }
+    public boolean isMaiorDe14Anos() {
+        LocalDate hoje = LocalDate.now();
+        LocalDate dataNascimento = this.dataDeNascimento;
+        return dataNascimento.plusYears(14).isBefore(hoje);
+    }
 }
