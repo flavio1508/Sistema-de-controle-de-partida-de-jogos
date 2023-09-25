@@ -7,7 +7,9 @@ import lan.house.jogos.dto.JogadorResponseDTO;
 import lan.house.jogos.models.Jogador;
 
 public interface JogadorMapper {
-    public JogadorResponseDTO jogadorParaJogadorResponseDTO(Jogador jogador);  
-    public Jogador jogadorRequestparaJogador(JogadorRequestDTO jogadorRequestDTO) throws Exception;
-    public Collection<JogadorResponseDTO> jogadoresParaJogadoresResponsesDtos(Collection<Jogador> jogadorss);
+    public JogadorResponseDTO jogadorParaJogadorResponseDTO(Jogador jogador);
+
+    public Jogador jogadorRequestParaJogador(JogadorRequestDTO jogadorRequestDTO) throws Exception;
+
+    public Collection<JogadorResponseDTO> jogadoresParaJogadoresResponseDTOs(Collection<Jogador> jogadores);
 }

@@ -22,8 +22,7 @@ public class JogadorResponseDTO {
     private Genero genero;
     private String nickname;
     private String email;
-    private Categoria categoria;
-    private Fornecedor fornecedor;
+   
 
     public JogadorResponseDTO(Jogador jogador) {
         this.id = jogador.getId();

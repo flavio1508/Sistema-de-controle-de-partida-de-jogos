@@ -7,7 +7,9 @@ import lan.house.jogos.dto.JogoResponseDTO;
 import lan.house.jogos.models.Jogo;
 
 public interface JogoMapper {
-    public JogoResponseDTO jogoParaJogoResponseDTO(Jogo jogo);  
+    public JogoResponseDTO jogoParaJogoResponseDTO(Jogo jogo);
+
     public Jogo jogoRequestparaJogo(JogoRequestDTO jogoRequestDTO) throws Exception;
-    public Collection<JogoResponseDTO> jogosParaJogosResponsesDtos(Collection<Jogo> jogos);
+
+    public Collection<JogoResponseDTO> jogosParaJogosResponseDTOs(Collection<Jogo> jogos);
 }

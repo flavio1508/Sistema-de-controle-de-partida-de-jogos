@@ -7,7 +7,10 @@ import lan.house.jogos.dto.CategoriaResponseDTO;
 import lan.house.jogos.models.Categoria;
 
 public interface CategoriaMapper {
-    public CategoriaResponseDTO categoriaParaCateforiaResponseDTO(Categoria categoria);  
-    public Categoria categoriaRequestparaCategoria(CategoriaRequestDTO categoriaRequestDTO) throws Exception;
-    public Collection<CategoriaResponseDTO> categoriasParaCategoriasResponsesDtos(Collection<Categoria> categorias);
+    public CategoriaResponseDTO categoriaParaCategoriaResponseDTO(Categoria categoria);
+
+    public Categoria categoriaRequestParaCategoria(CategoriaRequestDTO categoriaRequestDTO) throws Exception;
+
+    public Collection<CategoriaResponseDTO> categoriasParaCategoriasResponseDTOs(Collection<Categoria> categorias);
+
 }

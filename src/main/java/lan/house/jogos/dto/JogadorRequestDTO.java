@@ -2,8 +2,6 @@ package lan.house.jogos.dto;
 
 import java.time.LocalDate;
 
-import lan.house.jogos.models.Categoria;
-import lan.house.jogos.models.Fornecedor;
 import lan.house.jogos.models.Genero;
 import lombok.AllArgsConstructor;
 import lombok.Data;

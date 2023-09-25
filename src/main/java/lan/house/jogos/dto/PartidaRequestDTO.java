@@ -2,7 +2,7 @@ package lan.house.jogos.dto;
 
 import java.time.LocalDate;
 
-import ch.qos.logback.core.status.Status;
+import lan.house.jogos.models.Status;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,4 +16,5 @@ public class PartidaRequestDTO {
     private LocalDate inicioReal;
     private LocalDate fimReal;
     private Status status;
+    
 }

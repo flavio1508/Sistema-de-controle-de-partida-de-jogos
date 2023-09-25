@@ -7,7 +7,9 @@ import lan.house.jogos.dto.PartidaResponseDTO;
 import lan.house.jogos.models.Partida;
 
 public interface PartidaMapper {
-    public PartidaResponseDTO partidaParaPartidaResponseDTO(Partida partida);  
-    public Partida partidaRequestparaPartida(PartidaRequestDTO partidaRequestDTO) throws Exception;
-    public Collection<PartidaResponseDTO> partidasParaPartidasResponsesDtos(Collection<Partida> partidas);
+    PartidaResponseDTO partidaParaPartidaResponseDTO(Partida partida);
+
+    Partida partidaRequestParaPartida(PartidaRequestDTO partidaRequestDTO) throws Exception;
+
+    Collection<PartidaResponseDTO> partidasParaPartidasResponseDTOs(Collection<Partida> partidas);
 }
