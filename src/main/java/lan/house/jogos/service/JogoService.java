@@ -44,5 +44,4 @@ public class JogoService {
         return jogoMapper.jogosParaJogosResponseDTOs((Collection<Jogo>) jogoRepository.findAll());
     }
 
-    // Implement other service methods as needed.
 }

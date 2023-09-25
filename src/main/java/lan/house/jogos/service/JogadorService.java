@@ -9,6 +9,8 @@ import lan.house.jogos.repository.JogadorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.Collection;
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -34,6 +36,13 @@ public class JogadorService {
     }
 
     public JogadorResponseDTO cadastrar(JogadorRequestDTO jogadorRequestDTO) throws Exception {
+        LocalDate dataDeNascimento = jogadorRequestDTO.getDataDeNascimento();
+        LocalDate dataAtual = LocalDate.now();
+        int idade = Period.between(dataDeNascimento, dataAtual).getYears();
+
+        if (idade < 14) {
+            throw new IllegalArgumentException("O jogador deve ter pelo menos 14 anos de idade para se cadastrar.");
+        }
         Jogador jogador = jogadorMapper.jogadorRequestParaJogador(jogadorRequestDTO);
         jogadorRepository.save(jogador);
         return jogadorMapper.jogadorParaJogadorResponseDTO(jogador);
