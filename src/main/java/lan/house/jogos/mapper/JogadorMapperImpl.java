@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 import lan.house.jogos.dto.JogadorRequestDTO;
 import lan.house.jogos.dto.JogadorResponseDTO;
 import lan.house.jogos.models.Jogador;
+import lan.house.jogos.utils.DataConvert;
 
 import java.util.Collection;
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ public class JogadorMapperImpl implements JogadorMapper {
     @Override
     public Jogador jogadorRequestParaJogador(JogadorRequestDTO jogadorRequestDTO) {
         return new Jogador(
-                jogadorRequestDTO.getNome(),
+                 (DataConvert.obterData(jogadorRequestDTO.getDataDeNascimento())),
                 jogadorRequestDTO.getDataDeNascimento(),
                 jogadorRequestDTO.getGenero(),
                 jogadorRequestDTO.getNickname(),

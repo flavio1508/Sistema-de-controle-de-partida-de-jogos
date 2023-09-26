@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class JogadorRequestDTO {
     private String nome;
-    private LocalDate dataDeNascimento;
+    private String dataDeNascimento;
     private Genero genero;
     private String nickname;
     private String email;
