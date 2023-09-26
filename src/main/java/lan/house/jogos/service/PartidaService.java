@@ -44,5 +44,4 @@ public class PartidaService {
         return partidaMapper.partidasParaPartidasResponseDTOs((Collection<Partida>) partidaRepository.findAll());
     }
 
-    // Implement other service methods as needed.
 }

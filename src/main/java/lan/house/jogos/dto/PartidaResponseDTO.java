@@ -1,6 +1,7 @@
 package lan.house.jogos.dto;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import lan.house.jogos.models.Partida;
 import lan.house.jogos.models.Status;
@@ -14,10 +15,10 @@ import lombok.NoArgsConstructor;
 @Builder
 public class PartidaResponseDTO {
     private Long id;
-    private LocalDate inicioProgramado;
-    private LocalDate fimProgramado;
-    private LocalDate inicioReal;
-    private LocalDate fimReal;
+    private LocalDateTime inicioProgramado;
+    private LocalDateTime fimProgramado;
+    private LocalDateTime inicioReal;
+    private LocalDateTime fimReal;
     private Status status;
 
     public PartidaResponseDTO(Partida partida){

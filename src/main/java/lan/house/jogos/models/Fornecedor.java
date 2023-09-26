@@ -1,5 +1,6 @@
 package lan.house.jogos.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 
 import lan.house.jogos.utils.EntidadeBase;
@@ -12,9 +13,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class Fornecedor extends EntidadeBase {
+    @Column(nullable = false)
     private String nomeFornecedor;
+
+    @Column(nullable = false)
     private String descricaoFornecedor;
+
+    @Column(nullable = false)
     private String endereco;
+
+    @Column(nullable = false)
     private String contato;
 
     public Fornecedor(String nomeFornecedor, String descricaoFornecedor, String
